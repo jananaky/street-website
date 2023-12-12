@@ -1,0 +1,92 @@
+<html>
+    <head>
+        <title>
+            welcome
+        </title>
+        <style type="text/css">
+            h1{
+                color: #f8f1f1;
+                text-align: center;
+                text-shadow: 3px 3px 3px  rgb(71, 241, 230);
+            }
+             body
+            { 
+                
+             background-image:url("street.jpg")
+             
+              
+            }
+
+        #b{
+            width: 200px;
+            height: 15px;
+            background: rgb(248, 110, 4);
+            position: relative;
+            animation:mymove 5s 1s 5 ease;
+            border: 2px dashed rgb(242, 246, 241);
+          }
+          #c{
+            text-align: center;
+            color:  rgb(74, 7, 141);
+            width: 500px;
+            height: 40px;
+            border-radius: 5cm ;
+            border: 2px dashed rgb(111, 132, 6);
+          }
+          @keyframes mymove
+           {
+          from {left: 0px;}
+           to {left: 1600px;}
+           }
+           #a{
+           font-size: 20px; 
+           background-color: rgb(194, 236, 241);
+           font-style:italic;
+           border: 2px dashed rgb(18, 119, 243);
+           }
+       #a:hover{
+        transform: translateY(-5px);
+        background-color:rgb(46, 237, 247);
+        border:3px dashed rgb(8, 8, 239);
+       }
+       #d{
+        color: antiquewhite;
+        font-size: 20px;
+       }
+       ul{
+        color: #0aefef;
+        
+       }
+       #f{
+        color: rgb(171, 10, 91);
+        font-size: 30px;
+        
+       }
+       
+           </style>
+           
+        <script></script>
+    </head>
+    <body>
+        <form >
+            <h1 >Street light management</h1>
+            <div id="b" align="center">Bright light</div></br></br>
+            <div id="c" >
+                <lable > ...Welcome to street light management .Street light make the life bright . </lable></br>
+                <label > to avoide the accident and clear vission of road street light is necessary...</label>
+            </div></br></br>
+            <ul type="circle">
+            <li><lable id="d" >In your area,if you have street light problem then click this button</lable>
+            <button id="a"><a href="user.html" target="_blank"> User complaint </a></button></li></br></br></br>
+            <li><lable id="d" >To see the performance of worker click this button</lable>
+            <button id="a"><a href="line.html" target="_blank"> worker performance </a></button></li></br></br></br>
+            <li><lable id="d">Administation of street lights </lable>
+            <button id="a"><a href="admin.html" target="_blank"> organisation </a></button></li></br></br></br>
+            <li><lable id="d">For the line man </lable>
+            <button id="a"><a href="lineman.html" target="_blank"> line man </a></button></li></br></br></br></br></br></br>
+            <li><lable id="f" >Note :warning not to enter wrong message.</lable></li>
+            </ul>
+           
+        </form>
+    </body>
+</html>

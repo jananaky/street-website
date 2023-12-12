@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base target="_top">
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  </head>
+  <body>
+    <form action="https://script.google.com/macros/s/AKfycbwCRvpVZwb47ItVwmKZgzbUtpzpY3BAGkxqa4rJUt46XMRo393d_p_5l5b-Tfv-jncx/exec">
+    <div id="chart_div" style="width: 100%; height: 400px;"></div>
+    </form>
+    <script>
+      google.charts.load('current', {'packages':['corechart']});
+      
+      function drawChart(percentageArray) {
+        var data = google.visualization.arrayToDataTable([
+          ['Person', 'Percentage'],
+          ['Person 1', percentageArray[0]],
+          ['Person 2', percentageArray[1]],
+          ['Person 3', percentageArray[2]]
+        ]);
+
+        var options = {
+          title: 'Percentage of Three Persons',
+          width: '100%',
+          height: 400
+        };
+
+        var chart = new google.visualization.BarChart(document.getElementById('chart_div'));
+        chart.draw(data, options);
+      }
+
+      google.script.run.withSuccessHandler(drawChart).getPercentages();
+    </script>
+  </body>
+</html>

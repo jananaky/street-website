@@ -1,0 +1,106 @@
+<html>
+    <head>
+        <title>lineman replay</title>
+        <style>
+            #a{
+                font-size: 20px;
+                margin-inline-start: 450px ;
+                text-shadow: 1px 1px 2px rgb(248, 110, 4);
+            }
+            div{
+            margin-inline-start: 500px ;
+            text-align: center;
+            color:  rgb(74, 7, 141);
+            width: 400px;
+            height: 60px;
+            border-radius: 0.5cm ;
+            border: 3px solid skyblue;
+            background-color:rgb(240, 240, 237);
+            }
+            #b{
+                color: white;
+                border: 2px  solid rgb(13, 18, 0);
+                border-radius: 2cm ;
+                background-color: rgb(110, 150, 18);
+                margin-inline-start: 450px ;
+              }
+              #b:hover{
+                color: white;
+        transform: translateY(-10px);
+        background-color:rgb(29, 58, 244);
+        border:3px dashed rgb(146, 155, 23)
+       }
+       #c{
+        color: rgb(159, 34, 97);
+        font-size: 20px;
+       }
+        </style>
+        <script>
+               function workerForm(event) {
+      event.preventDefault(); // Prevents the form from submitting in the traditional way
+
+      // Get form element by ID
+      var form = document.getElementById('multiActionForm');
+
+      // Perform the first action
+      submitToScript1(form);
+
+      // Perform the second action
+      submitToScript2(form);
+    }
+
+    function submitToScript1(form) {
+      // Implement logic to send form data to the first endpoint
+      form.action = 'https://script.google.com/macros/s/AKfycbwCRvpVZwb47ItVwmKZgzbUtpzpY3BAGkxqa4rJUt46XMRo393d_p_5l5b-Tfv-jncx/exec';
+      form.submit();
+    }
+
+    function submitToScript2(form) {
+      // Implement logic to send form data to the second endpoint
+      form.action = 'https://script.google.com/macros/s/AKfycbz3VtubplDbnHWxF_S43d57a5Z2ScMWgRVAXeBUikkyTEklMl9Osk-atphitKSqy3Acew/exec';
+      form.submit();
+    }
+        </script>
+    </head>
+ <body>
+  <form name="workerForm" id="multiActionForm"method="post" onsubmit="submitworkerForm(event)">
+     <img src="Untitled.jpg"alt="relese tention now "id="s" width="200cm"height="800cm" scr align="left"></br></br></br></br>
+     <lable id="a">USER DETAILS</lable>
+     <div></br>
+        <lable> Is there is street light problem:</lable></br>
+        <input type="radio" name="light"value="YES"/>YES
+        <input type="radio" name="light"value="NO"/>NO</br>
+    </div></br>
+       
+       <div></br>
+       <lable>Is cable wire cut?</lable></br>
+       <input type="radio" name="wire"value="YES"/>YES
+        <input type="radio" name="wire"value="NO"/>NO</br>
+      </div></br>
+      <div></br>
+        <lable>Problem in transfomer?</lable></br>
+        <input type="radio" name="transformer"value="YES"/>YES
+        <input type="radio" name="transformer"value="NO"/>NO</br>
+      </div></br>
+      <div></br>
+        <lable>electricity leckage?</lable></br>
+        <input type="radio" name="current"value="YES"/>YES
+        <input type="radio" name="current"value="NO"/>NO</br>
+      </div></br>
+      <div></br>
+        <lable>short circuit take place?</lable></br>
+        <input type="radio" name="circuit"value="YES"/>YES
+        <input type="radio" name="circuit"value="NO"/>NO</br>
+    </div></br>
+    <div></br>
+        <lable>COMMENT :</lable>
+        <textarea required="required"id="message"height="170px"name="message" ></textarea></br>
+    </div></br>
+    
+      <button onclick=""id="b">submit</button></br>
+    
+
+    <label id="c">Note :Give the correct detail</label>
+    </form>
+ </body>
+</html>
