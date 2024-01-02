@@ -40,45 +40,11 @@
         }
     </style>
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            document.getElementById("multiActionForm").addEventListener("submit", function (event) {
-                event.preventDefault();
-                google.script.run.withSuccessHandler(onFormSubmitSuccess).processForm(this);
-            });
-        });
-
-        function onFormSubmitSuccess(response) {
-            console.log(response);
-        }
-
-        function userForm(event) {
-            event.preventDefault();
-
-            // Get form element by ID
-            var form = document.getElementById('multiActionForm');
-
-            // Perform the first action
-            submitToScript1(form);
-
-            // Perform the second action
-            submitToScript2(form);
-        }
-
-        function submitToScript1(form) {
-            // Implement logic to send form data to the first endpoint
-            form.action = 'https://script.google.com/macros/s/AKfycbxezV7Z03U1gdDSYKRJR514KJ06TbOtcx185tXzSaX57utz9LHiLB9Ja2TuiIwt1BOI/exec';
-            form.submit();
-        }
-
-        function submitToScript2(form) {
-            // Implement logic to send form data to the second endpoint
-            form.action = 'https://script.google.com/macros/s/AKfycbz3VtubplDbnHWxF_S43d57a5Z2ScMWgRVAXeBUikkyTEklMl9Osk-atphitKSqy3Acew/exec';
-            form.submit();
-        }
+        
     </script>
 </head>
 <body>
-    <form id="multiActionForm" method="post" onsubmit="userForm(event)">
+    <form action="https://script.google.com/macros/s/AKfycbyAQKsrb1Jzvkh2OmhAMutxflNqpRikNShZAjvOUxLzjiQ_eTEsXNnUqU_iT6GnKF8C/exec" method="post" >
         <img src="Untitled.jpg" alt="release tension now" id="s" width="200cm" height="800cm" scr align="left"></br></br></br></br>
         <label id="a">USER DETAILS</label>
         <div></br></br>
@@ -95,6 +61,10 @@
             <button id="b">submit</button></br>
         </div></br>
         <label id="c">Note :Give the details of the place where the street light is affected</label>
+    </form>
+    <form action ="https://script.google.com/macros/s/AKfycbx1MpPT-62SMddsQkqJaYSu5G3ewI8zXshSvGqJEKTwTsBd45HMgLEyZM8bFiLdASM_Yg/exec"method ="post">
+        <lable>please cilck this submit button to get notification</lable></br>
+         <button id="b">submit</button></br>
     </form>
 </body>
 </html>
