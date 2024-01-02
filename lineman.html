@@ -36,34 +36,11 @@
        }
         </style>
         <script>
-               function workerForm(event) {
-      event.preventDefault(); // Prevents the form from submitting in the traditional way
-
-      // Get form element by ID
-      var form = document.getElementById('multiActionForm');
-
-      // Perform the first action
-      submitToScript1(form);
-
-      // Perform the second action
-      submitToScript2(form);
-    }
-
-    function submitToScript1(form) {
-      // Implement logic to send form data to the first endpoint
-      form.action = 'https://script.google.com/macros/s/AKfycbwCRvpVZwb47ItVwmKZgzbUtpzpY3BAGkxqa4rJUt46XMRo393d_p_5l5b-Tfv-jncx/exec';
-      form.submit();
-    }
-
-    function submitToScript2(form) {
-      // Implement logic to send form data to the second endpoint
-      form.action = 'https://script.google.com/macros/s/AKfycbz3VtubplDbnHWxF_S43d57a5Z2ScMWgRVAXeBUikkyTEklMl9Osk-atphitKSqy3Acew/exec';
-      form.submit();
-    }
+               
         </script>
     </head>
  <body>
-  <form name="workerForm" id="multiActionForm"method="post" onsubmit="submitworkerForm(event)">
+  <form action="https://script.google.com/macros/s/AKfycbwuOAPeiL_cCL9I77oNK34i60NXso_RH_qrcruNgS882jF_QnKyjapUdMC0-yW8Tc1p/exec"method="post">
      <img src="Untitled.jpg"alt="relese tention now "id="s" width="200cm"height="800cm" scr align="left"></br></br></br></br>
      <lable id="a">USER DETAILS</lable>
      <div></br>
