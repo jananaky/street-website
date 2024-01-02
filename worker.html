@@ -24,17 +24,42 @@
               #b:hover{
                 color: white;
         transform: translateY(-10px);
-        background-color:rgb(46, 73, 247);
+        background-color:rgb(153, 166, 247);
         border:3px dashed rgb(239, 43, 8);
        }
        #c{
         color: rgb(159, 34, 97);
         font-size: 20px;
        }
-            
+            #d{
+                font-size: 10px;
+            }
         </style>
         <script>
-
+        function myfunction() {
+           
+            var x=document.getElementById("password").value;
+            if(x!=888)
+            {
+                alert("fill correct password")
+                return false;
+            }
+            else{
+                return true;
+            }
+        }
+        function ab(){
+          var y=document.getElementById("orgid").value;
+          if(y!=101)
+          {
+            alert("fill correct id ")
+            return false;
+          }
+          else{
+            return true;
+          }
+        }
+    
         </script>
     </head>
  <body>
@@ -43,11 +68,13 @@
      <lable id="a">LINE MAN PERFORMANCE</lable>
      <div></br></br>
         <lable>ORG ID  :</lable>
-        <input type ="text"placeholder="idno"required="101"id="orgid"></br></br></br>
+        <input type ="text"placeholder="idno"required="required"id="orgid"></br></br></br>
         <lable>NAME   :</lable>
-        <input type ="text"placeholder="name"required="required"id="name"></br></br></br>
+        <input type ="text"placeholder="name"required="required"id="name"onclick="ab()"></br></br></br>
         <lable>PASSWORD :</lable>
-        <input type="text"placeholder="password"required="11111"id="password"></br></br></br></br>
+        <input type="password"placeholder="password"required="required"id="password"></br></br></br>
+        <label>write checked</label>
+        <input type="text" id="d"onclick="myfunction()"required="required"></br></br></br></br>
         <button id="b"><a href="percentage.html" target="_blank"> submit </a></button></br></br></br></br></br></br>
         <lable id="c">Note  :only admin and organisation member or worker can view this page.</lable>
         </div>
@@ -58,3 +85,4 @@
     </form>
  </body>
 </html>
+
