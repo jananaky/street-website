@@ -24,43 +24,42 @@
   });
 
   function displayGraph(data) {
-    const labels = ['Janaky', 'Venkataraman', 'Arunachalam']; // Updated labels for the chart
-    const percentages = [data.Janaky, data.Venkataraman, data.Arunachalam]; // Corrected percentages from the Google Apps Script
+  const labels = ['Janaky', 'Venkataraman', 'Arunachalam']; // Updated labels for the chart
+  const percentages = [data.L3, data.M3, data.N3]; // Percentages received from the Google Apps Script
 
-    // Get the canvas element where you want to render the chart
-    const ctx = document.getElementById('myChart').getContext('2d');
+  // Get the canvas element where you want to render the chart
+  const ctx = document.getElementById('myChart').getContext('2d');
 
-    // Initialize the bar chart using Chart.js
-    new Chart(ctx, {
-      type: 'bar',
-      data: {
-        labels: labels,
-        datasets: [{
-          label: 'Percentages',
-          data: percentages,
-          backgroundColor: [
-            'rgba(255, 99, 132, 0.2)',
-            'rgba(54, 162, 235, 0.2)',
-            'rgba(255, 206, 86, 0.2)'
-          ],
-          borderColor: [
-            'rgba(255, 99, 132, 1)',
-            'rgba(54, 162, 235, 1)',
-            'rgba(255, 206, 86, 1)'
-          ],
-          borderWidth: 1
-        }]
-      },
-      options: {
-        scales: {
-          y: {
-            beginAtZero: true
-          }
+  // Initialize the bar chart using Chart.js
+  new Chart(ctx, {
+    type: 'bar', // Type of chart
+    data: {
+      labels: labels,
+      datasets: [{
+        label: 'Percentages',
+        data: percentages,
+        backgroundColor: [
+          'rgba(255, 99, 132, 0.2)',
+          'rgba(54, 162, 235, 0.2)',
+          'rgba(255, 206, 86, 0.2)'
+        ],
+        borderColor: [
+          'rgba(255, 99, 132, 1)',
+          'rgba(54, 162, 235, 1)',
+          'rgba(255, 206, 86, 1)'
+        ],
+        borderWidth: 1
+      }]
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true
         }
       }
-    });
-  }
-</script>
+    }
+  });
+}
 
 </body>
 </html>
