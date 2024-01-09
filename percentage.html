@@ -4,6 +4,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Percentage Graph</title>
+<!-- Include Chart.js library -->
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
@@ -12,12 +13,13 @@
   <input type="submit" value="Generate Graph">
 </form>
 
+<!-- Add canvas element for the chart -->
 <canvas id="myChart" width="400" height="200"></canvas>
 
 <script>
   document.getElementById('myForm').addEventListener('submit', function(e) {
     e.preventDefault();
-    fetch('https://script.google.com/macros/s/AKfycbwtNUJ8ZoEw3lVRwvL94I5gs7xoUSaXX4v7fnM-vJr0cx97cLy80OULXZugx8vDFylC/exec')
+    fetch('https://script.google.com/macros/s/AKfycbwtNUJ8ZoEw3lVRwvL94I5gs7xoUSaXX4v7fnM-vJr0cx97cLy80OULXZugx8vDFylC/exec') 
       .then(response => response.json())
       .then(data => {
         displayGraph(data);
@@ -25,15 +27,15 @@
   });
 
   function displayGraph(data) {
-    const labels = ['Janaky', 'Venkataraman', 'Arunachalam']; // Updated labels for the chart
-    const percentages = [data.L3, data.M3, data.N3];
+    const labels = ['L3', 'M3', 'N3']; // Labels for the chart
+    const percentages = [data.L3, data.M3, data.N3]; // Percentages received from the Google Apps Script
 
     // Get the canvas element where you want to render the chart
     const ctx = document.getElementById('myChart').getContext('2d');
 
     // Initialize the bar chart using Chart.js
     new Chart(ctx, {
-      type: 'bar',
+      type: 'bar', // Type of chart
       data: {
         labels: labels,
         datasets: [{
