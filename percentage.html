@@ -1,41 +1,63 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Line Man</title>
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-  
+<meta charset="UTF-8">
+<title>Percentage Graph</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
-    <form action="https://script.google.com/macros/s/AKfycbwuOAPeiL_cCL9I77oNK34i60NXso_RH_qrcruNgS882jF_QnKyjapUdMC0-yW8Tc1p/exec" method="post">
-        
-        <button type="submit">Submit</button>
-    </form>
-    
-    <div id="chart_div" style="width: 100%; height: 400px;"></div>
 
-    <script>
-        google.charts.load('current', {'packages':['corechart']});
-        google.charts.setOnLoadCallback(drawChart);
+<form id="myForm">
+  <input type="submit" value="Generate Graph">
+</form>
 
-        function drawChart() {
-            google.script.run.withSuccessHandler(function(percentageArray) {
-                var data = google.visualization.arrayToDataTable([
-                    ['Person', 'Percentage'],
-                    ['Person 1', percentageArray[0]],
-                    ['Person 2', percentageArray[1]],
-                    ['Person 3', percentageArray[2]]
-                ]);
+<canvas id="myChart" width="400" height="200"></canvas>
 
-                var options = {
-                    title: 'Percentage of Three Persons',
-                    width: '100%',
-                    height: 400
-                };
+<script>
+  document.getElementById('myForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    fetch('https://script.google.com/macros/s/AKfycbwtNUJ8ZoEw3lVRwvL94I5gs7xoUSaXX4v7fnM-vJr0cx97cLy80OULXZugx8vDFylC/exec')
+      .then(response => response.json())
+      .then(data => {
+        displayGraph(data);
+      });
+  });
 
-                var chart = new google.visualization.BarChart(document.getElementById('chart_div'));
-                chart.draw(data, options);
-            }).getPercentages();
+  function displayGraph(data) {
+    const labels = ['L3', 'M3', 'N3'];
+    const percentages = [data.L3, data.M3, data.N3];
+    const ctx = document.getElementById('myChart').getContext('2d');
+
+    new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: labels,
+        datasets: [{
+          label: 'Percentages',
+          data: percentages,
+          backgroundColor: [
+            'rgba(255, 99, 132, 0.2)',
+            'rgba(54, 162, 235, 0.2)',
+            'rgba(255, 206, 86, 0.2)'
+          ],
+          borderColor: [
+            'rgba(255, 99, 132, 1)',
+            'rgba(54, 162, 235, 1)',
+            'rgba(255, 206, 86, 1)'
+          ],
+          borderWidth: 1
+        }]
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true
+          }
         }
-    </script>
+      }
+    });
+  }
+</script>
+
 </body>
 </html>
