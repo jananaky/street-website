@@ -40,11 +40,28 @@
         }
     </style>
     <script>
-        
+        function validateForm() {
+            var phoneNo = document.getElementById('phoneno').value;
+            var address = document.getElementById('address').value;
+
+            // Validate phone number
+            if (phoneNo.length !== 9) {
+                alert('Phone number should be 9 digits.');
+                return false;
+            }
+
+            // Validate address
+            if (!address.startsWith('door no:')) {
+                alert('Address should start with "door no:".');
+                return false;
+            }
+
+            return true;
+        }
     </script>
 </head>
 <body>
-    <form action="https://script.google.com/macros/s/AKfycbyO-KrJvCHzqlZopvpS0Gm82fUTdfp2FMUcorz2fvDBFsMg_PPw1TqRIed1jx6LOPoK/exec" method="post" >
+    <form action="https://script.google.com/macros/s/AKfycbyO-KrJvCHzqlZopvpS0Gm82fUTdfp2FMUcorz2fvDBFsMg_PPw1TqRIed1jx6LOPoK/exec" method="post" onsubmit="return validateForm()" >
         <img src="Untitled.jpg" alt="release tension now" id="s" width="200cm" height="800cm" scr align="left"></br></br></br></br>
         <label id="a">USER DETAILS</label>
         <div></br></br>
@@ -58,8 +75,10 @@
             <input type="tel" placeholder="phone no" required="required" name="phoneno:" id="phoneno:"></br></br></br>
             <label>MESSAGE :</label>
             <textarea required="required" id="message"name="message" height="170px"></textarea></br></br></br></br>
+            <lable>click this button to get notification </lable>
+            <button id="a"><a href="notify.html" target="_blank"> notification</a></button>
             <button id="b">submit</button></br>
-        </div></br>
+            </div></br>
         <label id="c">Note :Give the details of the place where the street light is affected</label>
     </form>
    
